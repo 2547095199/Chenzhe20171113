@@ -15,6 +15,7 @@ import okhttp3.Call;
 /**
  * Created by CZ on 2017/11/13.
  */
+//presenter层
 public class LieBiaoPersenter {
     LieBiaoView view;
     Context context;
@@ -35,12 +36,14 @@ public class LieBiaoPersenter {
 
             @Override
             public void onSuccess(String result) {
+                //进行解析
                 Gson gson = new Gson();
                 MultiBean bean = gson.fromJson(result, MultiBean.class);
                 view.showView(bean);
             }
         });
     }
+    //view为空
     public void destory(){
         this.view=null;
     }

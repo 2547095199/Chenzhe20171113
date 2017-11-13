@@ -5,6 +5,7 @@ import mvpframework.bwie.com.zhoukaolianxi.bean.MultiBean;
 /**
  * Created by CZ on 2017/11/13.
  */
+//view层
 public interface LieBiaoView {
     public void showView(MultiBean bean);
 }

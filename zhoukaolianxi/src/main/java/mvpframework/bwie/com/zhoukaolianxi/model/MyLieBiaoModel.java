@@ -10,7 +10,7 @@ public class MyLieBiaoModel implements LieBiaoModel {
 
     @Override
     public void getData(String keywords, String page, Callback callback) {
-
+        //数据连接
         OkHttp3Utils.doGet("http://120.27.23.105/product/searchProducts?keywords="+keywords+"&page="+page+"&source=android",callback);
     }
 

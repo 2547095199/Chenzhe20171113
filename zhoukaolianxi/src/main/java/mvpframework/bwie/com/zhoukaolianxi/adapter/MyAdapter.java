@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import mvpframework.bwie.com.zhoukaolianxi.R;
 import mvpframework.bwie.com.zhoukaolianxi.bean.MultiBean;
@@ -22,6 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.myholder> {
     public MyAdapter(Context context, MultiBean bean) {
         this.context = context;
         this.bean = bean;
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(context));
     }
 
     @Override
@@ -44,6 +47,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.myholder> {
         //设置控件 属性
          holder.item_li_tv1.setText(bean.getData().get(position).getTitle());
          holder.item_li_tv2.setText(bean.getData().get(position).getPrice()+"￥");
+        ImageLoader.getInstance().displayImage(imgdata[0], holder.item_li_iv);
+
     }
     @Override
     public int getItemCount() {
