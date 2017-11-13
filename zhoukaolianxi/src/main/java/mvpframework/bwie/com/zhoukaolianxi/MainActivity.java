@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+
+        presenter.getdata("笔记本","1");
     }
     private void initView() {
         mChangeBt = (Button) findViewById(R.id.bt_change);
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
+
         //点击事件
         switch (v.getId()) {
             case R.id.bt_change:
